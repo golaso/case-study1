@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: flux-app-container
-        image: nginx:1.13.1
+        image: bibhas2/gitops-demo-webapp
         ports:
         - containerPort: 80
 ---
