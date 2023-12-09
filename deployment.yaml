@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flux-app
+  namespace: flux-app
+  labels:
+    app: flux-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flux-app
+  template:
+    metadata:
+      labels:
+        app: flux-app
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:1.13.1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flux-app-service
+spec:
+  selector:
+    app: flux-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+
