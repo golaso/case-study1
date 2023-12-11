@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: flux-app-container
-        image: golaso/case-study:v0.1
+        image: golaso/case-study:v0.2
         ports:
         - containerPort: 8080
 ---
